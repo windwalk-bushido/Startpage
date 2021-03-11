@@ -1,0 +1,194 @@
+@import "mixins";
+
+$black: #000000;
+$grey: #1F1F1F;
+$light-grey: #808080;
+$white: #FFFFFF;
+
+$fire: #F71735;
+$water: #00A6FB;
+$earth: #27CE38;
+$air: #FFD400;
+
+html
+{
+        font-family: Helvetica, sans-serif;
+        background-color: $black;
+        color: $light-grey;
+
+        a,
+        a:hover,
+        a:visited
+        {
+                text-decoration: none;
+                color: $light-grey;
+        }
+}
+
+.site
+{
+        @extend %flexbox;
+
+        .welcome-banner
+        {
+                @extend %flexbox;
+
+                //margin-top: 64px;
+
+                img
+                {
+                        width: 777px;
+                        height: auto;
+                        border-radius: 32px;
+                }
+
+                .search-div
+                {
+                        @extend %flexbox;
+
+                        .searchbox
+                        {
+                                width: 777px;
+                                height: 64px;
+                                margin: 0px;
+                                padding: 0px;
+                                overflow: hidden;
+                        }
+                }
+        }
+
+        .boxes
+        {
+                @extend %flexbox;
+
+                margin-top: 32px;
+                margin-bottom: 32px;
+
+                .group1,
+                .group2,
+                .group3,
+                .group4
+                {
+                        @extend %flexbox;
+
+                        width: 25%;
+                        margin-top: 32px;
+
+                        transition: 150ms all;
+
+                        .group-icon
+                        {
+                                @extend %flexbox;
+
+                                width: 100%;
+                                margin-bottom: 32px;
+                                font-size: 96px;
+                        }
+
+                        a
+                        {
+                                @extend %flexbox;
+
+                                width: 96px;
+                                height: 96px;
+                                margin: 4px;
+                                border-radius: 6px;
+                                background-color: $grey;
+                                transition: 150ms all;
+                        }
+
+                        a:hover
+                        {
+                                color: $light-grey;
+                                box-shadow: 0px 0px 64px 16px rgba(255,255,255,0.5);
+                                transform: rotate(45deg);
+                                transition: 150ms all;
+                        }
+
+                        i
+                        {
+                                font-size: 48px;
+                        }
+                }
+
+                .group1:hover,
+                .group2:hover,
+                .group3:hover,
+                .group4:hover
+                {
+                        transition: 150ms all;
+                }
+
+                .group1
+                {
+                        a:hover
+                        {
+                                color: $fire;
+                        }
+                }
+
+                .group1:hover
+                {
+                        color: $fire;
+                }
+
+                .group2
+                {
+                        a:hover
+                        {
+                                color: $water;
+                        }
+                }
+
+                .group2:hover
+                {
+                        color: $water;
+                }
+
+                .group3
+                {
+                        a:hover
+                        {
+                                color: $earth;
+                        }
+                }
+
+                .group3:hover
+                {
+                        color: $earth;
+                }
+
+                .group4
+                {
+                        a:hover
+                        {
+                                color: $air;
+                        }
+                }
+
+                .group4:hover
+                {
+                        color: $air;
+                }
+        }
+
+        .footer
+        {
+                @extend %flexbox;
+
+                margin-top: 64px;
+                margin-bottom: 8px;
+
+                p
+                {
+                        margin: 0px;
+                }
+
+                p,
+                a
+                {
+                        padding-left: 16px;
+                        padding-right: 16px;
+                }
+        }
+}
