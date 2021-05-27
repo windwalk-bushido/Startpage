@@ -1,5 +1,6 @@
 @import "mixins";
 
+
 $black: #000000;
 $grey: #1F1F1F;
 $light-grey: #808080;
@@ -10,59 +11,54 @@ $water: #00A6FB;
 $earth: #27CE38;
 $air: #FFD400;
 
+$lime: #6BD425;
+
+
+
+
 html
 {
+        font-size: 16px;
         font-family: Helvetica, sans-serif;
-        background-color: $black;
-        color: $light-grey;
 
         a,
         a:hover,
         a:visited
         {
-                text-decoration: none;
                 color: $light-grey;
+
+                text-decoration: none;
         }
 }
+
+::selection
+{
+        background-color: $black;
+        color: $white;
+}
+
+
+
 
 .site
 {
         @extend %flexbox;
 
-        .welcome-banner
+        .wallpaper
         {
-                @extend %flexbox;
+                height: 100%;
 
-                //margin-top: 64px;
-
-                img
-                {
-                        width: 777px;
-                        height: auto;
-                        border-radius: 32px;
-                }
-
-                .search-div
-                {
-                        @extend %flexbox;
-
-                        .searchbox
-                        {
-                                width: 777px;
-                                height: 64px;
-                                margin: 0px;
-                                padding: 0px;
-                                overflow: hidden;
-                        }
-                }
+                top: 0;
+                left: 0;
+                right: 0;
+                position: fixed;
+                
+                z-index: -10;
         }
 
         .boxes
         {
                 @extend %flexbox;
-
-                margin-top: 32px;
-                margin-bottom: 32px;
 
                 .group1,
                 .group2,
@@ -71,43 +67,59 @@ html
                 {
                         @extend %flexbox;
 
-                        width: 25%;
-                        margin-top: 32px;
+                        width: 100%;
 
-                        transition: 150ms all;
+                        margin-top: 6rem;
+
+                        transition: 100ms all;
 
                         .group-icon
                         {
                                 @extend %flexbox;
 
                                 width: 100%;
-                                margin-bottom: 32px;
-                                font-size: 96px;
+
+                                margin-bottom: 2rem;
+
+                                font-size: 6rem;
                         }
 
-                        a
+                        .sorting
                         {
                                 @extend %flexbox;
 
-                                width: 96px;
-                                height: 96px;
-                                margin: 4px;
-                                border-radius: 6px;
-                                background-color: $grey;
-                                transition: 150ms all;
-                        }
+                                a
+                                {
+                                        @extend %flexbox;
 
-                        a:hover
-                        {
-                                color: $light-grey;
-                                box-shadow: 0px 0px 64px 16px rgba(255,255,255,0.5);
-                                transform: rotate(45deg);
-                                transition: 150ms all;
-                        }
+                                        width: 6rem;
+                                        height: 6rem;
 
-                        i
-                        {
-                                font-size: 48px;
+                                        margin: 0.25rem;
+
+                                        border-radius: 0.5rem;
+
+                                        background-color: $grey;
+                                        
+                                        opacity: 0.75;
+                                        transition: 100ms all;
+                                }
+
+                                a:hover
+                                {
+                                        color: $light-grey;
+                                
+                                        box-shadow: 8px 8px 4px 0px rgba(255, 255, 255, 0.75);
+
+                                        transform: rotate(45deg);
+                                        transition: 100ms all;
+                                        z-index: 10;
+                                }
+
+                                i
+                                {
+                                        font-size: 3rem;
+                                }
                         }
                 }
 
@@ -116,14 +128,19 @@ html
                 .group3:hover,
                 .group4:hover
                 {
-                        transition: 150ms all;
+                        color: $black;
+                        
+                        transition: 100ms all;
                 }
 
                 .group1
                 {
-                        a:hover
+                        .Sfire
                         {
-                                color: $fire;
+                                a:hover
+                                {
+                                        color: $fire;
+                                }
                         }
                 }
 
@@ -134,9 +151,12 @@ html
 
                 .group2
                 {
-                        a:hover
+                        .Swater
                         {
-                                color: $water;
+                                a:hover
+                                {
+                                        color: $water;
+                                }
                         }
                 }
 
@@ -147,9 +167,12 @@ html
 
                 .group3
                 {
-                        a:hover
+                        .Searth
                         {
-                                color: $earth;
+                                a:hover
+                                {
+                                        color: $earth;
+                                }
                         }
                 }
 
@@ -160,9 +183,12 @@ html
 
                 .group4
                 {
-                        a:hover
+                        .Sair
                         {
-                                color: $air;
+                                a:hover
+                                {
+                                        color: $air;
+                                }
                         }
                 }
 
@@ -176,19 +202,95 @@ html
         {
                 @extend %flexbox;
 
-                margin-top: 64px;
-                margin-bottom: 8px;
+                margin-top: 4rem;
+                margin-bottom: 2rem;
 
-                p
-                {
-                        margin: 0px;
-                }
+                color: $white;
 
                 p,
                 a
                 {
-                        padding-left: 16px;
-                        padding-right: 16px;
+                        @extend %flexbox;
+
+                        margin: 0px;
+                        
+                        line-height: 2;
+                        font-weight: bold;
+                }
+
+                a,
+                a:hover,
+                a:visited
+                {
+                        padding: 0.25rem;
+
+                        width: 5rem;
+                        
+                        border-radius: 1rem;
+
+                        background-color: $white;
+                        color: $black;
+
+                        transition: 100ms all;
+                        cursor: pointer;
+                }
+        }
+}
+
+// Tablet
+@media (min-width: 768px) and (max-width: 1023px)
+{
+        .site
+        {
+                .boxes
+                {
+                        .group1,
+                        .group2,
+                        .group3,
+                        .group4
+                        {
+                                width: 50%;
+                        }
+                }
+        }
+}
+
+// Desktop
+@media screen and (min-width: 1024px)
+{
+        .site
+        {
+                .wallpaper
+                {
+                        width: 100%;
+                        height: auto;
+                }
+
+                .boxes
+                {
+                        .group1,
+                        .group2,
+                        .group3,
+                        .group4
+                        {
+                                width: 25%;
+
+                                .sorting
+                                {
+                                        width: 100%;
+                                }
+
+                        }
+                }
+
+                .footer
+                {
+                        bottom: 0;
+                        left: 0;
+                        right: 0;
+                        position: fixed;
+
+                        margin-bottom: 1rem;
                 }
         }
 }

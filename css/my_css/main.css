@@ -1,13 +1,17 @@
-.site, .site .welcome-banner, .site .welcome-banner .search-div, .site .boxes, .site .boxes .group1,
-.site .boxes .group2,
-.site .boxes .group3,
-.site .boxes .group4, .site .boxes .group1 .group-icon,
+.site .footer p,
+.site .footer a, .site .footer, .site .boxes .group1 .sorting a,
+.site .boxes .group2 .sorting a,
+.site .boxes .group3 .sorting a,
+.site .boxes .group4 .sorting a, .site .boxes .group1 .sorting,
+.site .boxes .group2 .sorting,
+.site .boxes .group3 .sorting,
+.site .boxes .group4 .sorting, .site .boxes .group1 .group-icon,
 .site .boxes .group2 .group-icon,
 .site .boxes .group3 .group-icon,
-.site .boxes .group4 .group-icon, .site .boxes .group1 a,
-.site .boxes .group2 a,
-.site .boxes .group3 a,
-.site .boxes .group4 a, .site .footer {
+.site .boxes .group4 .group-icon, .site .boxes .group1,
+.site .boxes .group2,
+.site .boxes .group3,
+.site .boxes .group4, .site .boxes, .site {
   display: flex;
   flex-wrap: wrap;
   flex-direction: row;
@@ -17,97 +21,166 @@
   justify-content: center;
   width: 100%;
   margin: 0px;
-  padding: 0px; }
+  padding: 0px;
+}
 
 html {
+  font-size: 16px;
   font-family: Helvetica, sans-serif;
+}
+html a,
+html a:hover,
+html a:visited {
+  color: #808080;
+  text-decoration: none;
+}
+
+::-moz-selection {
   background-color: #000000;
-  color: #808080; }
-  html a,
-  html a:hover,
-  html a:visited {
-    text-decoration: none;
-    color: #808080; }
+  color: #FFFFFF;
+}
 
-.site .welcome-banner img {
-  width: 777px;
-  height: auto;
-  border-radius: 32px; }
-.site .welcome-banner .search-div .searchbox {
-  width: 777px;
-  height: 64px;
-  margin: 0px;
-  padding: 0px;
-  overflow: hidden; }
-.site .boxes {
-  margin-top: 32px;
-  margin-bottom: 32px; }
-  .site .boxes .group1,
-  .site .boxes .group2,
-  .site .boxes .group3,
-  .site .boxes .group4 {
-    width: 25%;
-    margin-top: 32px;
-    transition: 150ms all; }
-    .site .boxes .group1 .group-icon,
-    .site .boxes .group2 .group-icon,
-    .site .boxes .group3 .group-icon,
-    .site .boxes .group4 .group-icon {
-      width: 100%;
-      margin-bottom: 32px;
-      font-size: 96px; }
-    .site .boxes .group1 a,
-    .site .boxes .group2 a,
-    .site .boxes .group3 a,
-    .site .boxes .group4 a {
-      width: 96px;
-      height: 96px;
-      margin: 4px;
-      border-radius: 6px;
-      background-color: #1F1F1F;
-      transition: 150ms all; }
-    .site .boxes .group1 a:hover,
-    .site .boxes .group2 a:hover,
-    .site .boxes .group3 a:hover,
-    .site .boxes .group4 a:hover {
-      color: #808080;
-      box-shadow: 0px 0px 64px 16px rgba(255, 255, 255, 0.5);
-      transform: rotate(45deg);
-      transition: 150ms all; }
-    .site .boxes .group1 i,
-    .site .boxes .group2 i,
-    .site .boxes .group3 i,
-    .site .boxes .group4 i {
-      font-size: 48px; }
-  .site .boxes .group1:hover,
-  .site .boxes .group2:hover,
-  .site .boxes .group3:hover,
-  .site .boxes .group4:hover {
-    transition: 150ms all; }
-  .site .boxes .group1 a:hover {
-    color: #F71735; }
-  .site .boxes .group1:hover {
-    color: #F71735; }
-  .site .boxes .group2 a:hover {
-    color: #00A6FB; }
-  .site .boxes .group2:hover {
-    color: #00A6FB; }
-  .site .boxes .group3 a:hover {
-    color: #27CE38; }
-  .site .boxes .group3:hover {
-    color: #27CE38; }
-  .site .boxes .group4 a:hover {
-    color: #FFD400; }
-  .site .boxes .group4:hover {
-    color: #FFD400; }
+::selection {
+  background-color: #000000;
+  color: #FFFFFF;
+}
+
+.site .wallpaper {
+  height: 100%;
+  top: 0;
+  left: 0;
+  right: 0;
+  position: fixed;
+  z-index: -10;
+}
+.site .boxes .group1,
+.site .boxes .group2,
+.site .boxes .group3,
+.site .boxes .group4 {
+  width: 100%;
+  margin-top: 6rem;
+  transition: 100ms all;
+}
+.site .boxes .group1 .group-icon,
+.site .boxes .group2 .group-icon,
+.site .boxes .group3 .group-icon,
+.site .boxes .group4 .group-icon {
+  width: 100%;
+  margin-bottom: 2rem;
+  font-size: 6rem;
+}
+.site .boxes .group1 .sorting a,
+.site .boxes .group2 .sorting a,
+.site .boxes .group3 .sorting a,
+.site .boxes .group4 .sorting a {
+  width: 6rem;
+  height: 6rem;
+  margin: 0.25rem;
+  border-radius: 0.5rem;
+  background-color: #1F1F1F;
+  opacity: 0.75;
+  transition: 100ms all;
+}
+.site .boxes .group1 .sorting a:hover,
+.site .boxes .group2 .sorting a:hover,
+.site .boxes .group3 .sorting a:hover,
+.site .boxes .group4 .sorting a:hover {
+  color: #808080;
+  box-shadow: 8px 8px 4px 0px rgba(255, 255, 255, 0.75);
+  transform: rotate(45deg);
+  transition: 100ms all;
+  z-index: 10;
+}
+.site .boxes .group1 .sorting i,
+.site .boxes .group2 .sorting i,
+.site .boxes .group3 .sorting i,
+.site .boxes .group4 .sorting i {
+  font-size: 3rem;
+}
+.site .boxes .group1:hover,
+.site .boxes .group2:hover,
+.site .boxes .group3:hover,
+.site .boxes .group4:hover {
+  color: #000000;
+  transition: 100ms all;
+}
+.site .boxes .group1 .Sfire a:hover {
+  color: #F71735;
+}
+.site .boxes .group1:hover {
+  color: #F71735;
+}
+.site .boxes .group2 .Swater a:hover {
+  color: #00A6FB;
+}
+.site .boxes .group2:hover {
+  color: #00A6FB;
+}
+.site .boxes .group3 .Searth a:hover {
+  color: #27CE38;
+}
+.site .boxes .group3:hover {
+  color: #27CE38;
+}
+.site .boxes .group4 .Sair a:hover {
+  color: #FFD400;
+}
+.site .boxes .group4:hover {
+  color: #FFD400;
+}
 .site .footer {
-  margin-top: 64px;
-  margin-bottom: 8px; }
-  .site .footer p {
-    margin: 0px; }
-  .site .footer p,
-  .site .footer a {
-    padding-left: 16px;
-    padding-right: 16px; }
+  margin-top: 4rem;
+  margin-bottom: 2rem;
+  color: #FFFFFF;
+}
+.site .footer p,
+.site .footer a {
+  margin: 0px;
+  line-height: 2;
+  font-weight: bold;
+}
+.site .footer a,
+.site .footer a:hover,
+.site .footer a:visited {
+  padding: 0.25rem;
+  width: 5rem;
+  border-radius: 1rem;
+  background-color: #FFFFFF;
+  color: #000000;
+  transition: 100ms all;
+  cursor: pointer;
+}
 
-/*# sourceMappingURL=main.css.map */
+@media (min-width: 768px) and (max-width: 1023px) {
+  .site .boxes .group1,
+.site .boxes .group2,
+.site .boxes .group3,
+.site .boxes .group4 {
+    width: 50%;
+  }
+}
+@media screen and (min-width: 1024px) {
+  .site .wallpaper {
+    width: 100%;
+    height: auto;
+  }
+  .site .boxes .group1,
+.site .boxes .group2,
+.site .boxes .group3,
+.site .boxes .group4 {
+    width: 25%;
+  }
+  .site .boxes .group1 .sorting,
+.site .boxes .group2 .sorting,
+.site .boxes .group3 .sorting,
+.site .boxes .group4 .sorting {
+    width: 100%;
+  }
+  .site .footer {
+    bottom: 0;
+    left: 0;
+    right: 0;
+    position: fixed;
+    margin-bottom: 1rem;
+  }
+}/*# sourceMappingURL=main.css.map */
