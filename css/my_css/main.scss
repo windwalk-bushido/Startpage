@@ -202,6 +202,8 @@ html
         {
                 @extend %flexbox;
 
+                width: 10rem;
+
                 margin-top: 4rem;
                 margin-bottom: 2rem;
 
@@ -286,8 +288,6 @@ html
                 .footer
                 {
                         bottom: 0;
-                        left: 0;
-                        right: 0;
                         position: fixed;
 
                         margin-bottom: 1rem;
